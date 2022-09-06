@@ -1,0 +1,54 @@
+{
+  "awb.status_by_code": {
+    "path": "/v1/awb/{awb:[0-9a-zA-Z]+}/status/",
+    "controller": "awb.controller.StatusController",
+    "action": "ReadStatusAction",
+    "method": "GET",
+    "security": {
+      "authenticated": true,
+      "grants": {
+        "ROLE": "ROLE_DDWCS",
+        "PERMISSION": "GET"
+      }
+    }
+  },
+  "delivery.estimate.get": {
+    "path": "/v1/delivery/estimate/",
+    "controller": "delivery.controller.EstimateController",
+    "action": "EstimateAction",
+    "method": "GET",
+    "security": {
+      "authenticated": true,
+      "grants": {
+        "ROLE": "ROLE_DDWCS",
+        "PERMISSION": "GET"
+      }
+    }
+  },
+  "delivery.estimate.post": {
+    "path": "/v1/delivery/estimate/",
+    "controller": "delivery.controller.EstimateController",
+    "action": "EstimatePostAction",
+    "method": "POST",
+    "security": {
+      "authenticated": true,
+      "grants": {
+        "ROLE": "ROLE_DDWCS",
+        "PERMISSION": "ADD"
+      }
+    }
+  },
+  "delivery.reservation_store.get": {
+    "path": "/v1/delivery/reservation-store/",
+    "controller": "delivery.controller.ReservationController",
+    "action": "ReservationStoreAction",
+    "method": "POST",
+    "security": {
+      "authenticated": true,
+      "grants": {
+        "ROLE": "ROLE_DDWCS",
+        "PERMISSION": "GET"
+      }
+    }
+  }
+}

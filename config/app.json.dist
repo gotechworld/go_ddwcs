@@ -1,0 +1,33 @@
+{
+  "server": {
+    "name": "server-name",
+    "port": 8080
+  },
+  "security": {
+    "provider": "identity_manager_provider",
+    "access_control": "role_based"
+  },
+  "protocol": "http",
+  "system_vars": {
+    "im_host": "",
+    "oms_host": "",
+    "global_config_host": "",
+    "urgent_cargus_host": "",
+    "ald_host": "",
+    "stocks_host_altex": "",
+    "stocks_host_mediagalaxy": "",
+    "cms_host_altex": "",
+    "cms_host_mediagalaxy": ""
+  },
+  "logging": {
+    "type": "console|stream",
+    "logFile": "logs.log",
+    "level": "debug"
+  },
+  "caching": {
+    "name": "internal_instance",
+    "url": "%ENV(REDIS_URL)%",
+    "password": "%ENV(REDIS_PASSWORD)%"
+  },
+  "supported_media_types": ["application/json"]
+}

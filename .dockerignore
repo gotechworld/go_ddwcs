@@ -1,0 +1,11 @@
+/.idea
+/.git
+/.env.dist
+/.env
+/log/
+/.gitignore
+/.gitconfig
+/config/app.json.dist
+/docs
+.DS_Store
+Jenkinsfile

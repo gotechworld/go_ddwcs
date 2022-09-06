@@ -1,0 +1,7 @@
+.idea
+vendor
+log
+config/app.json
+/.env
+/.env.prod
+profiling

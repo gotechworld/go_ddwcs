@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "6c97b23d-5f2b-4e9b-869c-7645249369bd",
+		"name": "DDWCS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Delivery",
+			"item": [
+				{
+					"name": "@Deprecated",
+					"item": [
+						{
+							"name": "Get Estimate SKU not found or stocks timeout",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Service-Name",
+										"value": "{{X-Service-Name}}",
+										"type": "text"
+									},
+									{
+										"key": "X-Service-Key",
+										"value": "{{X-Service-Key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/v1/delivery/estimate/?sku[]=SKU_32&region_code=4&sku[]=SKU30",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"delivery",
+										"estimate",
+										""
+									],
+									"query": [
+										{
+											"key": "sku[]",
+											"value": "SKU_32"
+										},
+										{
+											"key": "region_code",
+											"value": "4"
+										},
+										{
+											"key": "sku[]",
+											"value": "SKU30"
+										}
+									]
+								},
+								"description": "Returns maximum estimated delivery days for all sku[] specified products.\n\nsku[] - string - one ore more product SKU’s, \nregion_code - string eg. B, CJ, IS - optional\nwebsite_code - string altex/mediagalaxy - if not set or incorrectly set we have default altex"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Estimate Correct",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Service-Name",
+										"value": "{{X-Service-Name}}",
+										"type": "text"
+									},
+									{
+										"key": "X-Service-Key",
+										"value": "{{X-Service-Key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/v1/delivery/estimate/?sku[]=ACC01075&region_code=AG",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"delivery",
+										"estimate",
+										""
+									],
+									"query": [
+										{
+											"key": "sku[]",
+											"value": "ACC01075"
+										},
+										{
+											"key": "region_code",
+											"value": "AG"
+										}
+									]
+								},
+								"description": "Returns maximum estimated delivery days for all sku[] specified products.\n\nsku[] - string - one ore more product SKU’s, \nregion_code - string eg. B, CJ, IS - optional\nwebsite_code - string altex/mediagalaxy - if not set or incorrectly set we have default altex"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Estimate with region Correct",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Service-Name",
+										"type": "text",
+										"value": "{{X-Service-Name}}"
+									},
+									{
+										"key": "X-Service-Key",
+										"type": "text",
+										"value": "{{X-Service-Key}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/v1/delivery/estimate/?sku[]=ACC01075&region_code=AG",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"delivery",
+										"estimate",
+										""
+									],
+									"query": [
+										{
+											"key": "sku[]",
+											"value": "ACC01075"
+										},
+										{
+											"key": "region_code",
+											"value": "AG"
+										}
+									]
+								},
+								"description": "Returns maximum estimated delivery days for all sku[] specified products.\n\nsku[] - string - one ore more product SKU’s, \nregion_code - string eg. B, CJ, IS - optional\nwebsite_code - string altex/mediagalaxy - if not set or incorrectly set we have default altex"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get Estimate V1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Service-Name",
+								"value": "{{X-Service-Name}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Service-Key",
+								"value": "{{X-Service-Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"region_code\": \"B\",\n  \"products\": {\n      \"CSTSACBIOATX01\": {\n            \"bundle_id\": \"MM-0000081-7\",\n            \"is_preorder\": 0,\n            \"attribute_set_id\": 4,\n            \"qty\":1\n        },\n        \"USBAD16GBU55B3\": {\n            \"bundle_id\": \"MM-0000081-7\",\n            \"is_preorder\": 0,\n            \"attribute_set_id\": 7,\n            \"qty\":1\n        },\n        \"MED50FMEVA\": {\n            \"is_preorder\": 0,\n            \"attribute_set_id\": 23,\n            \"qty\":100\n        }\n  }\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/delivery/estimate/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"delivery",
+								"estimate",
+								""
+							]
+						},
+						"description": "Returns delivery estimate information based on confirmation algorithm and delivery information found on StockAPI-Warehouse"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "AWB",
+			"item": [
+				{
+					"name": "Get Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Service-Name",
+								"value": "{{X-Service-Name}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Service-Key",
+								"value": "{{X-Service-Key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/awb/100265591/status/?increment_id=ATX000000184550&customer_id=1180761",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"awb",
+								"100265591",
+								"status",
+								""
+							],
+							"query": [
+								{
+									"key": "increment_id",
+									"value": "ATX000000184550"
+								},
+								{
+									"key": "customer_id",
+									"value": "1180761"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Status PROD",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Service-Name",
+								"type": "text",
+								"value": "{{X-Service-Name}}"
+							},
+							{
+								"key": "X-Service-Key",
+								"type": "text",
+								"value": "{{X-Service-Key}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/awb/100607909/status/?increment_id=ATX000005486951&customer_id=35217",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"awb",
+								"100607909",
+								"status",
+								""
+							],
+							"query": [
+								{
+									"key": "increment_id",
+									"value": "ATX000005486951"
+								},
+								{
+									"key": "customer_id",
+									"value": "35217"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
